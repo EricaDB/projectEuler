@@ -26,14 +26,11 @@ def parseMatrix(matrix):
     for row in range(len(matList)):
         for col in range(len(matList[row])):
             matList[row][col] = Node(matList[row][col], row, col)
-    #print(matList)
     return matList
         
 def scanNode(curNode, row, col, matrix):
     targetNode = matrix[row][col]
-    #print(curNode)
     if curNode.tentDist + targetNode.edgeCost < targetNode.tentDist:
-        print(curNode)
         targetNode.tentDist = curNode.tentDist + targetNode.edgeCost
 
 def shortestPath(startY, matrix):
@@ -55,7 +52,6 @@ def shortestPath(startY, matrix):
     for i in range(len(matrix)):
         if matrix[i][len(matrix) - 1].tentDist < shortestSum:
             shortestSum = matrix[i][len(matrix) - 1].tentDist
-    #print(shortestSum)
     return shortestSum
     
 def main(matrix):
